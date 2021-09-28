@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3002;
 const cors = require('cors');
 const pokemonroutes = require('./routes/pokemonroutes');
 
+app.use(cors());
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -12,7 +13,6 @@ app.use((req, res, next) => {
   });
 
 
-app.use(cors());
 app.use('/pokemons', pokemonroutes);
 
 
